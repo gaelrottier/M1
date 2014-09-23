@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT a (object)>
+<!ATTLIST a
+    href NMTOKEN #REQUIRED
+    xlink:href NMTOKEN #REQUIRED
+    xlink:role CDATA #REQUIRED
+    xmlns:xlink CDATA #FIXED "http://www.w3.org/1999/xlink"
+>
+<!ELEMENT auteur (nom,prenom)>
+<!ELEMENT b (#PCDATA)>
+<!ELEMENT description (a|hr|p|script)*>
+<!ATTLIST description
+    Style NMTOKEN #REQUIRED
+    style NMTOKEN #REQUIRED
+    xml:space NMTOKEN #REQUIRED
+    xmlns CDATA #FIXED "http://www.w3.org/1999/xhtml"
+>
+<!ELEMENT document (titre,auteur,description,remarques,xml_parse)>
+<!ELEMENT hr EMPTY>
+<!ATTLIST hr width NMTOKEN #REQUIRED>
+<!ELEMENT i (#PCDATA|b)*>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT object EMPTY>
+<!ATTLIST object xlink:href NMTOKEN #REQUIRED>
+<!ELEMENT p (#PCDATA|i)*>
+<!ATTLIST p
+    align NMTOKEN #IMPLIED
+    xml:space NMTOKEN #IMPLIED
+>
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT remarques (#PCDATA)>
+<!ELEMENT script (#PCDATA)>
+<!ATTLIST script language NMTOKEN #REQUIRED>
+<!ELEMENT titre (#PCDATA)>
+<!ATTLIST titre
+    Style NMTOKEN #REQUIRED
+    style NMTOKEN #REQUIRED
+>
+<!ELEMENT xml_parse EMPTY>
+<!ATTLIST xml_parse processor NMTOKEN #REQUIRED>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT document (titre, auteur, description, remarques, xml_parse)>
+    <!ELEMENT titre (#PCDATA)>
+        <!ATTLIST titre style CDATA #REQUIRED>
+    <!ELEMENT auteur (nom, prenom)>
+        <!ELEMENT nom (#PCDATA)>
+        <!ELEMENT prenom (#PCDATA)>
+    <!ELEMENT description (p+, hr, a, script)>
+        <!ATTLIST description xmlns CDATA #REQUIRED>
+        <!ATTLIST description style CDATA #REQUIRED>
+        <!ATTLIST description xml:space CDATA #REQUIRED>
+        <!ELEMENT p (b|i)>
+            <!ATTLIST p xml:space CDATA #IMPLIED>
+            <!ATTLIST p align CDATA #IMPLIED>
+            <!ELEMENT i (#PCDATA)>
+                <!ELEMENT b (#PCDATA)>
+        <!ELEMENT hr (ANY)>
+        <!ELEMENT a (object)>
+        <!ELEMENT script (#PCDATA)>
+    <!ELEMENT remarques (#PCDATA)>
+    <!ELEMENT xml_parse EMPTY>
+
+
+-->

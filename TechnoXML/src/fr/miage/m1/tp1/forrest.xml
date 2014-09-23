@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--<?xml-stylesheet type="text/xsl" href="fg.xsl"?>-->
+<!-- &#224; relire -->
+<?robots index="yes" follow="no"?>
+<!DOCTYPE document SYSTEM "forrest.dtd">
+<document>
+    <titre style="bold" Style="big">Mes m&#233;moires</titre>
+    <auteur>
+        <nom>Gump</nom>
+        <prenom>Forrest</prenom>
+    </auteur>
+    <description xmlns="http://www.w3.org/1999/xhtml"
+                 style="bold" Style="big" xml:space="preserve">
+        <!-- &#224; partir d'ici, on peut utiliser 
+        des &#233;l&#233;ments HTML et d'autres aussi
+        c'est pratique pour du contenu
+        documentaire -->
+        <p xml:space="default" align="center">Ma maman disait
+        toujours : &#xA; "<i>la vie c'est comme une 
+            bo&#238;te de <b>chocolat</b>, on ne sait jamais
+            sur quoi on va tomber</i>".</p>
+            <hr width="10000em"/>
+            <a  xlink:href="bubbagump.avi"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                href="bubbagump.avi"
+                xlink:role="mon film">
+                <object xlink:href="bubbagump.avi"/>
+            </a>
+            <script language="JavaScript">
+                <![CDATA[
+                function check() {
+                for (int i=10; i>0; i++) {
+                if ( a[b[i]] >5 ) break;
+                }
+                }
+                ]]>
+        <!-- v&#233;rifier si la boucle doit s'&#233;crire
+        avec i&#45;&#45; et pas i++ -->
+            </script>
+            <p>La suite, je ne m'en souviens plus...</p>
+        </description>
+    <remarques>
+        Mon document ne parse pas
+    </remarques>
+    <xml_parse processor="JAXP"/>
+</document>

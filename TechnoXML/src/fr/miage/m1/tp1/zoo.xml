@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<zoo>
+    <animal type="primate">
+        <nom>George</nom>
+        <sexe>M</sexe>
+        <taille unite="cm">200</taille>
+        <poids unite="kg">400</poids>
+        <date_naiss>hier</date_naiss>
+        <warnings>ATTENTION, IL AIME BACOUP LES BANANANANANANANANANANBATMAN</warnings>
+    </animal>
+    <animal type="primate">
+        <nom>Lucy</nom>
+        <sexe>F</sexe>
+        <taille unite="cm">180</taille>
+        <poids unite="kg">500</poids>
+        <date_naiss>23/10/2013</date_naiss>
+        <warnings>I'm a banana !</warnings>
+    </animal>
+    <animal type="fauve">
+        <nom>Tigrou</nom>
+        <sexe>hybride</sexe>
+        <taille unite="cm">180</taille>
+        <poids unite="kg">250</poids>
+        <date_naiss>01/01/1970</date_naiss>
+        <warnings>C'est un(e) tigre(sse) quand meme</warnings>
+    </animal>
+    
+</zoo>
