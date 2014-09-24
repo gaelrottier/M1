@@ -73,7 +73,7 @@ public class AnalyseurDeClasse {
         for (Field f : fs) {
             f.setAccessible(true);
             System.out.print("\t" + Modifier.toString(f.getModifiers()));
-            System.out.print("\t" + f.getGenericType());
+            System.out.print("\t" + f.getType().getSimpleName());
             System.out.print("\t" + f.getName() + "\n");
         }
         System.out.println("\t}");
