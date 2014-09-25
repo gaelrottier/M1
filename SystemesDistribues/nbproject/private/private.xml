@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp1/Serveur.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp2/ClientManager.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp2/Buffer.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp1/Client.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp2/Client.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp2/Producer.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp2/Main.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp2/Talkative.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp2/SimpleRaceCondition.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp2/Consumer.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp2/MultithreadedServer.java</file>
+        </group>
     </open-files>
 </project-private>

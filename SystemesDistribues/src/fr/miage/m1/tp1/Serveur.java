@@ -21,15 +21,15 @@ public class Serveur extends Thread {
         this.port = port;
     }
 
-    public void run(){
+    public void run() {
         try {
             serverSocket = new ServerSocket(port);
             System.out.println("Attente d'un client sur le port " + port + "...");
             client = serverSocket.accept();
             pw = new PrintWriter(client.getOutputStream());
-            
+
             System.out.println("Nouveau client connecté au serveur à partir de " + client.getInetAddress() + " sur le port " + client.getPort());
-            
+
             do {
                 //Lecture
                 BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
@@ -39,13 +39,13 @@ public class Serveur extends Thread {
                 } else {
                     System.out.println("Message du client : " + msg);
                 }
-                
+
                 //Ecriture
                 pw.println(msg);
                 pw.flush();
-                
+
             } while (msg != null && !msg.isEmpty() && !msg.equals("stop"));
-            
+
             serverSocket.close();
             client.close();
         } catch (IOException ex) {
