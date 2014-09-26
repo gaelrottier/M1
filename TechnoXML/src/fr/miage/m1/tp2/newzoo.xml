@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Un petit Zoo avec quelques animaux --><zoo>
+    <info>Ouvert tous les jours de 8h00 à 19h00</info>
+    <info><img src="nourrir.gif"/>Il est <b>interdit</b> de nourrir les animaux&#127;&#128;.</info>
+    <aquarium>
+        <mammifères-marins>
+            <dauphins>
+                <dauphin date-naissance="1997-4-1" id="jhgtr13" photo="flipper.jpg">
+                    <nom>Flipper</nom>
+                    <sexe>M</sexe>
+                    <taille unité="cm">215</taille>
+                    <poids unité="kg">105</poids>
+                </dauphin>
+                <dauphin date-naissance="2003-10-23" id="lkjh45" photo="ecco.jpg">
+                    <nom>Ecco</nom>
+                    <sexe>F</sexe>
+                    <taille unité="cm">202</taille>
+                    <poids unité="kg">98</poids>
+                </dauphin>
+                <dauphin date-naissance="1996-12-25" id="kjlhy90" photo="oum.jpg">
+                    <nom>Oum</nom>
+                    <sexe>F</sexe>
+                    <!-- c'est mon préféré -->
+                    <taille unité="cm">295</taille>
+                    <poids status="mesure approximative" unité="kg">190<!-- il faut refaire la pesée --></poids>
+                </dauphin>
+            </dauphins>
+        </mammifères-marins>
+        <poissons>
+            <sélaciens>
+                <danger>Il est <b>interdit</b> de nager avec les requins.</danger>
+                <requin date-naissance="1998-6-5" espèce="marteau" id="plojk09">
+                    <nom>Oussama</nom>
+                    <sexe>M</sexe>
+                    <taille unité="cm">455</taille>
+                    <poids unité="kg">540</poids>
+                    <commentaire>A tendance a se jeter contre les murs
+                        <![CDATA[<<< marteau & cinglé !!! >>>]]>
+                        <!-- Il faudra bien le faire piquer un jour -->
+                    </commentaire>
+                </requin>
+                <requin date-naissance="2013-1-13" espèce="requin bleu" id="vgyuh43" nom-savant="carcharias glaucus" visite-medicale="Visite à faire">
+                    <nom>Saddam</nom>
+                    <sexe>M</sexe>
+                    <taille unité="cm">355</taille>
+                    <poids status="" unité="kg">425</poids>
+                </requin>
+            </sélaciens>
+        </poissons>
+    </aquarium>
+</zoo>

@@ -1,10 +1,7 @@
 package fr.miage.m1.tp2;
 
 import fr.miage.m1.tp1.*;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
@@ -29,7 +26,7 @@ public class MultithreadedServer {
                 System.out.println("Nouveau client connecté au serveur à partir de " + client.getInetAddress() + " sur le port " + client.getPort());
 
                 new Thread(new ClientManager(client)).start();
-                
+
             }
         } catch (IOException ex) {
             Logger.getLogger(Serveur.class.getName()).log(Level.SEVERE, null, ex);
