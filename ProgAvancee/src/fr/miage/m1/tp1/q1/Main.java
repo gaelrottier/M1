@@ -194,14 +194,14 @@ class FileList extends SimpleFileVisitor<Path> {
     public FileVisitResult visitFile(Path dir, BasicFileAttributes attrs) {
         Filter filter = new Filter();
         if (filter.accept(dir.toFile().getParentFile(), dir.toFile().getName())) {
-            System.out.println("fil " + dir.getFileName());
+            System.out.println("\tfil " + dir.getFileName());
         }
         return FileVisitResult.CONTINUE;
     }
 
     @Override
     public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attributes) throws IOException {
-        System.out.println("dir " + dir.toFile().getAbsolutePath());
+        System.out.println("dir " + dir.toFile().getPath());
         return FileVisitResult.CONTINUE;
     }
 }
