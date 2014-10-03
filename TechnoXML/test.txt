@@ -1,0 +1,58 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Zoo</title>
+<link href="zoo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>Bienvenue au Zoo</h1>
+    Ouvert tous les jours de 8h00 &agrave; 19h00
+    Il est interdit de nourrir les animaux.
+    
+        
+            
+                
+                    Flipper
+                    M
+                    215
+                    105
+                
+                
+                    Ecco
+                    F
+                    202
+                    98
+                
+                
+                    Oum
+                    F
+                    
+                    295
+                    190
+                
+            
+        
+        
+            
+                Il est interdit de nager avec les requins.
+                
+                    Oussama
+                    M
+                    455
+                    540
+                    A tendance a se jeter contre les murs
+                        &lt;&lt;&lt; marteau &amp; cingl&eacute; !!! &gt;&gt;&gt;
+                        
+                    
+                
+                
+                    Saddam
+                    M
+                    355
+                    425
+                
+            
+        
+    
+</body>
+</html>

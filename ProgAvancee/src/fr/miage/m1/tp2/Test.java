@@ -20,6 +20,7 @@ public class Test {
 
     public Test(int[] xpoints, int[] ypoints, int npoints) {
         p = new Polygon(xpoints, ypoints, npoints);
+        p.getBounds();
     }
 
 }

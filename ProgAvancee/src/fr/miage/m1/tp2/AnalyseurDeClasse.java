@@ -7,7 +7,7 @@ public class AnalyseurDeClasse {
 
     public static void analyseClasse(String nomClasse) throws ClassNotFoundException {
         // Récupération d'un objet de type Class correspondant au nom passé en paramètres
-        Class cl = Class.forName(nomClasse);
+        Class cl = getClasse(nomClasse);
         afficheEnTeteClasse(cl);
 
         System.out.println();
@@ -27,8 +27,7 @@ public class AnalyseurDeClasse {
      * Retourne la classe dont le nom est passé en paramètre
      */
     public static Class getClasse(String nomClasse) throws ClassNotFoundException {
-        // CODE A ECRIRE
-        return null;
+        return Class.forName(nomClasse);
     }
 
     /**
