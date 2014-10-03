@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.security.SecureClassLoader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,21 +33,27 @@ public class MyClassLoader extends SecureClassLoader {
     }
 
     private byte[] loadClassData(String name) {
+        byte[] b = null;
+
         try {
-            FileInputStream fis = null;
             String[] className = name.split("\\.");
+
             for (File p : path) {
                 findFile(p, className, 0);
             }
-            fis = new FileInputStream(result);
-            ByteArrayOutputStream bis = new ByteArrayOutputStream(fis.read());
-            return bis.toByteArray();
+            FileInputStream fis = new FileInputStream(result);
+            byte[] fileContent = new byte[(int) result.length()];
+            int size = fis.read(fileContent);
+            
+            ByteArrayOutputStream bis = new ByteArrayOutputStream();
+            bis.write(fileContent, 0, size);
+            b = bis.toByteArray();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MyClassLoader.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(MyClassLoader.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
+        return b;
 
     }
 
@@ -106,6 +113,6 @@ public class MyClassLoader extends SecureClassLoader {
     public static void main(String[] args) throws ClassNotFoundException {
         MyClassLoader mc = new MyClassLoader();
         mc.setPath(new String[]{"F:\\Bibliothèques\\Documents\\classes"});
-        mc.findClass("fr.miage.m1.tp1.q1.FileList");
+        System.out.println(mc.findClass("fr.miage.m1.tp1.q2.SeLit").getTypeName());
     }
 }
