@@ -1,21 +1,25 @@
 package fr.miage.m1.tp3;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.security.SecureClassLoader;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.jar.JarFile;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MyClassLoader extends SecureClassLoader {
 
-    private ArrayList<File> path = new ArrayList<File>();
+    private final ArrayList<File> path = new ArrayList<>();
     private File result = null;
 
     public void setPath(String... paths) {
@@ -36,11 +40,11 @@ public class MyClassLoader extends SecureClassLoader {
         byte[] b = null;
 
         try {
-            String[] className = name.split("\\.");
 
-            for (File p : path) {
-                findFile(p, className, 0);
+            for (File f : path) {
+                findFile(f.getAbsolutePath(), name);
             }
+
             FileInputStream fis = new FileInputStream(result);
             byte[] fileContent = new byte[(int) result.length()];
             int size = fis.read(fileContent);
@@ -57,25 +61,38 @@ public class MyClassLoader extends SecureClassLoader {
 
     }
 
-    private void findFile(File dir, String[] packageName, int iteration) {
+    private void findFile(String dir, String name) throws IOException {
 
-        if (result == null) {
-            if (dir.isDirectory()) {
-                for (File f : dir.listFiles()) {
-                    if (result == null) {
-                        if (f.isDirectory()) {
-                            if (f.getName().equals(packageName[iteration])) {
-                                findFile(f, packageName, iteration + 1);
-                            } else {
-                                findFile(f, packageName, 0);
-                            }
-                        } else {
-                            if (f.getName().equals(packageName[packageName.length - 1] + ".class")) {
-                                result = f;
-                            }
+        if (dir.endsWith(".jar")) {
+            JarFile jar = new JarFile(dir);
+            
+            
+        } else {
+            
+            Path rep = Paths.get(dir);
+
+            if (rep.toFile().isDirectory()) {
+                Files.walkFileTree(rep, new SimpleFileVisitor<Path>() {
+
+                    @Override
+                    public FileVisitResult visitFile(final Path file, final BasicFileAttributes attrs) throws IOException {
+
+                        if (file.endsWith(dir + "\\" + name.replace(".", "\\") + ".class")) {
+                            MyClassLoader.this.result = file.toFile();
+                            return FileVisitResult.TERMINATE;
                         }
+
+                        return FileVisitResult.CONTINUE;
+
                     }
-                }
+
+                    @Override
+                    public FileVisitResult visitFileFailed(Path file, IOException io) {
+
+                        return FileVisitResult.SKIP_SUBTREE;
+                    }
+
+                });
             }
         }
     }
