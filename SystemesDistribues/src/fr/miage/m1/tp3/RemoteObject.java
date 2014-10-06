@@ -29,16 +29,6 @@ public class RemoteObject extends UnicastRemoteObject implements IRemote {
         System.out.println(i);
     }
 
-    public static void main(String[] args) {
-        try {
-            RemoteObject ro = new RemoteObject();
-            Registry r = LocateRegistry.createRegistry(10099);
-            r.rebind("server", ro);
-        } catch (RemoteException ex) {
-            Logger.getLogger(RemoteObject.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
     @Override
     public String getInetAddress() throws RemoteException {
         try {
@@ -47,5 +37,15 @@ public class RemoteObject extends UnicastRemoteObject implements IRemote {
             Logger.getLogger(RemoteObject.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+
+    public static void main(String[] args) {
+        try {
+            RemoteObject ro = new RemoteObject();
+            Registry r = LocateRegistry.createRegistry(10099);
+            r.rebind("server", ro);
+        } catch (RemoteException ex) {
+            Logger.getLogger(RemoteObject.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

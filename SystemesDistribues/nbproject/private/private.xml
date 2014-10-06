@@ -3,7 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp3/RemoteObject.java</file>
             <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp2/ClientManager.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp4/q1/IServer.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp3/IRemote.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp4/q1/Client.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp4/q2/Client.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp3/Parent.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp4/q2/Directory.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp4/q2/DirectoryImpl.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp3/Client.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp4/q1/MyObject.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp4/q1/Server.java</file>
+            <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp3/GrandSonCustomSerialization.java</file>
             <file>file:/F:/Bibliothèques/Documents/MIAGE%20M1%20again/SystemesDistribues/src/fr/miage/m1/tp2/MultithreadedServer.java</file>
         </group>
     </open-files>

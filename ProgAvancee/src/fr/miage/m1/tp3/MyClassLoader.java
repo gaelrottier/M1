@@ -44,7 +44,7 @@ public class MyClassLoader extends SecureClassLoader {
             FileInputStream fis = new FileInputStream(result);
             byte[] fileContent = new byte[(int) result.length()];
             int size = fis.read(fileContent);
-            
+
             ByteArrayOutputStream bis = new ByteArrayOutputStream();
             bis.write(fileContent, 0, size);
             b = bis.toByteArray();
@@ -60,48 +60,18 @@ public class MyClassLoader extends SecureClassLoader {
     private void findFile(File dir, String[] packageName, int iteration) {
 
         if (result == null) {
-
-//            System.out.println("\nL'arborescence de fichiers actuelle est : " + dir.getAbsolutePath());
-//            System.out.println("Le fichier recherché est : " + packageName[iteration]);
-//            System.out.println("Le fichier courant est : " + dir.getName());
             if (dir.isDirectory()) {
-
-//                System.out.println("  et est un dossier");
                 for (File f : dir.listFiles()) {
                     if (result == null) {
-
-//                        System.out.println("\tLe fichier " + f.getName() + ", est présent dans le dossier");
                         if (f.isDirectory()) {
-
-//                            System.out.println("\t  est un dossier");
                             if (f.getName().equals(packageName[iteration])) {
-
-//                                System.out.println("\t\tLe nom du dossier correspond au "
-//                                        + "dossier recherché : " + packageName[iteration]
-//                                        + ", on incrémente itération à : " + (iteration + 1));
                                 findFile(f, packageName, iteration + 1);
                             } else {
-
-//                                System.out.println("\t\tLe nom du dossier ("
-//                                        + f.getName() + ") ne correspond pas à celui "
-//                                        + "recherché, on remet itération à 0");
                                 findFile(f, packageName, 0);
                             }
                         } else {
-
-//                            System.out.println("\t  est un fichier");
                             if (f.getName().equals(packageName[packageName.length - 1] + ".class")) {
-
-//                                System.out.println("\t\tLe nom du fichier (" + f.getName()
-//                                        + ") correspond au fichier recherché");
-//                                System.out.println("\t\t\tFichier : " + f);
                                 result = f;
-                            } else {
-
-//                                System.out.println("\t\tLe nom du fichier (" + f.getName()
-//                                        + ") ne correspond pas au fichier recherché ("
-//                                        + packageName[packageName.length - 1] + ".class)");
-//                                
                             }
                         }
                     }
