@@ -1,11 +1,5 @@
 package fr.miage.m1.tp4.q1;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -15,6 +9,8 @@ import java.util.logging.Logger;
 
 public class Server extends UnicastRemoteObject implements IServer {
 
+    private MyObject mo;
+    
     Server() throws RemoteException {
     }
 
@@ -25,6 +21,9 @@ public class Server extends UnicastRemoteObject implements IServer {
 
     @Override
     public void take(MyObject mo) throws RemoteException {
+        this.mo = mo;
+        System.out.println("mo.i = " + mo.attrI);
+        mo.attrI = 55;
         System.out.println("mo : " + mo.attrI);
     }
 
@@ -44,10 +43,7 @@ public class Server extends UnicastRemoteObject implements IServer {
     }
 
     @Override
-    public MyObject sendMyObject() throws RemoteException {
-        MyObject mo = new MyObject();
-        mo.attrI = 1337;
-        
+    public MyObject sendMyObject() throws RemoteException {        
         return mo;
     }
 

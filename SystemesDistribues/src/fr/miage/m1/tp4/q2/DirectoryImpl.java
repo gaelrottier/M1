@@ -19,12 +19,12 @@ public class DirectoryImpl extends UnicastRemoteObject implements Directory {
     }            
             
     @Override
-    public void put(String nom, String tel) throws RemoteException {
+    public synchronized void put(String nom, String tel) throws RemoteException {
         nums.put(nom, tel);
     }
 
     @Override
-    public String get(String nomRecherche) throws RemoteException {
+    public synchronized String get(String nomRecherche) throws RemoteException {
         return nums.getOrDefault(nomRecherche, null);
     }
 

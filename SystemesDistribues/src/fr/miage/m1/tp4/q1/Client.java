@@ -32,10 +32,11 @@ public class Client {
             System.out.println(is.sendInt());
             System.out.println("\nAppel de la méthode sendMyObject.attrI");
             System.out.println(is.sendMyObject().attrI);
+            System.out.println(mo.attrI);
             System.out.println("\nAppel de la méthode test()");
             is.test();
             System.out.println("\nAppel de sendServer");
-            System.out.println(is.sendServer().getClass());
+            System.out.println(is.sendServer().toString());
         } catch (RemoteException | NotBoundException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         }

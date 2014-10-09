@@ -14,8 +14,11 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.security.SecureClassLoader;
 import java.util.ArrayList;
 import java.util.jar.JarFile;
+import java.util.jar.JarInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 public class MyClassLoader extends SecureClassLoader {
 
@@ -64,9 +67,12 @@ public class MyClassLoader extends SecureClassLoader {
     private void findFile(String dir, String name) throws IOException {
 
         if (dir.endsWith(".jar")) {
-            JarFile jar = new JarFile(dir);
-            
-            
+            File f = new File(dir);
+            if(f.exists()){
+                JarInputStream jarFile = new JarInputStream(new FileInputStream(f));
+                
+                
+            }
         } else {
             
             Path rep = Paths.get(dir);

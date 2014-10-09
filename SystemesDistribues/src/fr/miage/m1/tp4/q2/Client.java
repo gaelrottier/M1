@@ -21,7 +21,7 @@ public class Client implements Runnable {
         execute();
     }
 
-    public void execute() {
+    public synchronized void execute() {
         try {
             Registry r = LocateRegistry.getRegistry(10099);
             d = (Directory) r.lookup("server");
