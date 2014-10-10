@@ -6,25 +6,25 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sun.rmi.server.UnicastRef;
 
 public class DirectoryImpl extends UnicastRemoteObject implements Directory {
 
-    private Map<String, String> nums = new HashMap<>();
+    private Map<String, String> nums = new ConcurrentHashMap<>();
 
     DirectoryImpl() throws RemoteException{
         
     }            
             
     @Override
-    public synchronized void put(String nom, String tel) throws RemoteException {
+    public void put(String nom, String tel) throws RemoteException {
         nums.put(nom, tel);
     }
 
     @Override
-    public synchronized String get(String nomRecherche) throws RemoteException {
+    public String get(String nomRecherche) throws RemoteException {
         return nums.getOrDefault(nomRecherche, null);
     }
 
