@@ -1,3 +1,5 @@
+package fr.miage.m1.tp3;
+
 import java.io.File;
 import javax.xml.transform.*;
 import javax.xml.transform.stream.*;
