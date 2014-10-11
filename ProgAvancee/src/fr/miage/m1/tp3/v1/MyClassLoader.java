@@ -109,7 +109,7 @@ public class MyClassLoader extends SecureClassLoader {
                     }
                     
                 });
-                
+                System.out.println(result);
                 File classe = new File(result);
                 FileInputStream fis = new FileInputStream(classe);
                 byte[] fileContent = new byte[(int) classe.length()];
@@ -125,7 +125,7 @@ public class MyClassLoader extends SecureClassLoader {
     
     public static void main(String[] args) throws ClassNotFoundException {
         MyClassLoader mc = new MyClassLoader();
-        mc.setPath(new String[]{"F:\\Bibliothèques\\Documents\\MIAGE M1 again\\TechnoXML\\dist\\TechnoXML.jar"});
-        System.out.println(mc.findClass("fr.miage.m1.tp1.XMLParser").getTypeName());
+        mc.setPath(new String[]{"F:\\Bibliothèques\\Documents\\classes"});
+        System.out.println(mc.findClass("fr.miage.m1.tp1.Client").getTypeName());
     }
 }
