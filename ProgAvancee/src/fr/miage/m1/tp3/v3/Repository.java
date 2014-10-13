@@ -40,12 +40,12 @@ public class Repository<T> {
                             className = className.substring(0, className.length() - 6);
                             //On remplace les  séparateurs de fichiers par des "."
                             className = className.replace(File.separator, ".");
-                            
+
                             Class<? extends T> c = (Class<? extends T>) mcl.load(rep.toString(), className);
                             if (c.getSuperclass() == T) {
-                                classes.add( c);
+                                classes.add(c);
                             }
-                            
+
                         } catch (ClassNotFoundException | SecurityException | IllegalArgumentException ex) {
                             Logger.getLogger(Repository.class.getName()).log(Level.SEVERE, null, ex);
                         }
