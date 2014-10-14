@@ -41,6 +41,7 @@ public class Repository<T> {
                             className = className.replace(File.separator, ".");
 
                             Class<? extends T> c = (Class<? extends T>) mcl.load(rep.toString(), className);
+
                             if (c.getSuperclass() == superClass) {
                                 classes.add(c);
                             }
@@ -65,8 +66,9 @@ public class Repository<T> {
     }
 
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
-        Repository<Thread> rep = new Repository(new File("F:\\Bibliothèques\\Documents\\classes"), Thread.class);
-        for (Class<? extends Thread> c : rep.load()) {
+        Repository<Action> rep = new Repository(new File("F:\\Bibliothèques\\Documents\\classes"), Action.class);
+
+        for (Class<? extends Action> c : rep.load()) {
             System.out.println("La classe chargée est : " + c.getName());
         }
     }

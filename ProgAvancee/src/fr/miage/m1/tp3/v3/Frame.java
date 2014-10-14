@@ -1,9 +1,10 @@
 package fr.miage.m1.tp3.v3;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import javafx.event.ActionEvent;
+import java.io.File;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.ImageIcon;
@@ -48,13 +49,27 @@ public class Frame {
 
             @Override
             public Object getValue(String arg0) {
-                if (arg0 == Action.ACCELERATOR_KEY) // cannot be changed later (use putValue when possible - not anonymous)
+                if (arg0.equals(Action.ACCELERATOR_KEY)) // cannot be changed later (use putValue when possible - not anonymous)
                 {
                     return KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK);
                 }
                 return super.getValue(arg0);
             }
         });
+
+        JMenu dynamic = new JMenu("Dynamique");
+        bar.add(dynamic);
+        Repository<Action> rep = new Repository(new File("F:\\Bibliothèques\\Documents\\classes"), fr.miage.m1.tp3.v3.Action.class);
+
+        for (Class<? extends Action> c : rep.load()) {
+            dynamic.add(new AbstractAction(c.getSimpleName()) {
+
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    System.out.println("Action réalisée : " + e);
+                }
+            });
+        }
     }
 
     public static void main(String[] args) {
