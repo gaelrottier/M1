@@ -34,7 +34,6 @@ public class Repository<T> {
                     if (file.toString().endsWith(".class")) {
                         try {
                             //On récupère le nom canonique du 
-                            System.out.println(file.toFile().getCanonicalFile());
                             String className = file.toString().substring(rep.toString().length() + 1);
                             //On enlève l'extention de fichier (".class")
                             className = className.substring(0, className.length() - 6);
@@ -42,7 +41,7 @@ public class Repository<T> {
                             className = className.replace(File.separator, ".");
 
                             Class<? extends T> c = (Class<? extends T>) mcl.load(rep.toString(), className);
-                            if (c.getSuperclass() == T) {
+                            if (c.getSuperclass() == superClass) {
                                 classes.add(c);
                             }
 
@@ -62,7 +61,6 @@ public class Repository<T> {
         } catch (IOException ex) {
             Logger.getLogger(Repository.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         return classes;
     }
 
@@ -70,7 +68,6 @@ public class Repository<T> {
         Repository<Thread> rep = new Repository(new File("F:\\Bibliothèques\\Documents\\classes"), Thread.class);
         for (Class<? extends Thread> c : rep.load()) {
             System.out.println("La classe chargée est : " + c.getName());
-            System.out.println(c.getSuperclass().getName());
         }
     }
 }

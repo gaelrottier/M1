@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Mon Jan 20 14:35:09 CET 2014
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=F\:\\mmo\\jeux.jar
+manifest.mergeall=true
+manifest.mainclass=main.mmo
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=
+includes=<inc|mmojeux/Ressources>
