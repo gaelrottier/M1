@@ -82,7 +82,7 @@ public class Client {
                 public void run() {
                     try {
                         System.out.println("Get : Execution dans le thread " + Thread.currentThread().getName());
-                        System.out.println(d.get("Jean" + x));
+                        System.out.println(d.get("Jean " + x));
                     } catch (RemoteException ex) {
                         Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
                     }
