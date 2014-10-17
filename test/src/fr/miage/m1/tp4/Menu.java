@@ -11,4 +11,5 @@ public @interface Menu {
     String name();
     String icon() default "";
     String shortcut() default "";
+    String comportement() default "";
 }

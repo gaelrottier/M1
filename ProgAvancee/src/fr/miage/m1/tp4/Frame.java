@@ -82,8 +82,12 @@ public class Frame {
                             @Override
                             public void actionPerformed(ActionEvent e) {
                                 try {
-                                    m.invoke(c);
-                                } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+                                    if ("".equals(me.comportement())) {
+                                        m.invoke(c);
+                                    } else {
+                                        c.getMethod(me.comportement()).invoke(c);
+                                    }
+                                } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
                                     Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
                                 }
                             }
@@ -93,7 +97,7 @@ public class Frame {
                                 if (arg0.equals(Action.ACCELERATOR_KEY)) // cannot be changed later (use putValue when possible - not anonymous)
                                 {
                                     int ke = 0;
-                                    
+
                                     switch (me.shortcut()) {
                                         case "A":
                                             ke = KeyEvent.VK_A;
@@ -107,7 +111,7 @@ public class Frame {
                                         default:
                                             break;
                                     }
-                                    
+
                                     return KeyStroke.getKeyStroke(ke, InputEvent.CTRL_DOWN_MASK);
                                 }
                                 return super.getValue(arg0);

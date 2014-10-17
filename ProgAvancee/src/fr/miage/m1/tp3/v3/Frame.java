@@ -59,9 +59,9 @@ public class Frame {
 
         JMenu dynamic = new JMenu("Dynamique");
         bar.add(dynamic);
-        Repository<Action> rep = new Repository(new File("F:\\Bibliothèques\\Documents\\classes"), fr.miage.m1.tp3.v3.Action.class);
+        Repository<fr.miage.m1.tp3.v3.Action> rep = new Repository(new File("F:\\Bibliothèques\\Documents\\MIAGE M1 again\\test\\build\\classes"), fr.miage.m1.tp3.v3.Action.class);
 
-        for (Class<? extends Action> c : rep.load()) {
+        for (Class<? extends fr.miage.m1.tp3.v3.Action> c : rep.load()) {
             dynamic.add(new AbstractAction(c.getSimpleName()) {
 
                 @Override
