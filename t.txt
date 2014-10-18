@@ -1,0 +1,1 @@
+javac -d test/build/classes/ -cp ProgAvancee/dist/ProgAvancee.jar -processor fr.miage.m1.tp4.MyAnnotationProcessor test/src/fr/miage/m1/tp4/Action.java test/src/fr/miage/m1/tp4/Action1.java test/src/fr/miage/m1/tp4/Action2.java test/src/fr/miage/m1/tp4/Action3.java test/src/fr/miage/m1/tp4/Menu.java

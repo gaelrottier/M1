@@ -8,11 +8,11 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-public class Main {
+public class Main{
 
     public static void main(String[] args) throws TransformerConfigurationException, TransformerException {
-        String styleSheet = "F:/BILBIO~1/Documents/MIAGE M1 again/TechnoXmlWebNormal/zoo.xsl";
-        String xmlSource = "F:\\BIBLIO~1\\Documents\\MIAGE M1 again\\TechnoXmlWebNormal\\zoo.xml";
+        String styleSheet = "src\\res\\zoo.xsl";
+        String xmlSource = "src\\res\\zoo.xml";
         TransformerFactory tf = TransformerFactory.newInstance();
         System.out.println(new File(styleSheet).exists());
         Transformer t = tf.newTransformer(new StreamSource(styleSheet));
