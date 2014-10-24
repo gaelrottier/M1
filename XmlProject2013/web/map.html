@@ -1,0 +1,58 @@
+<script type='text/javascript'
+	src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCz4Dm-p_BXQZeFP1jGtLuYOVlFqWArvBw&libraries=visualization&sensor=false'></script>
+<script type="text/javascript"
+	src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js">
+
+	
+</script>
+	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
+	type='text/javascript'></script>
+<script type="text/javascript">	
+function tempEnvoyer() {
+	var loadingString = 'DataServlet?map=add';
+	$('#temp-scripting').load(loadingString);
+}
+</script>
+<script type="text/javascript">
+	function initialize(arg) {
+		var mapOptions = {
+			zoom : 12,
+			center : new google.maps.LatLng(43.70907, 7.263004),
+			mapTypeId : google.maps.MapTypeId.ROADMAP
+		}
+
+		markersList = [];
+
+		map = new google.maps.Map(document.getElementById("map_canvas"),
+				mapOptions);
+	};
+
+	function clearMap() {
+		initialize();
+	}
+	function closeMap(){
+		$("#smokeScreen").css("display","none");
+		$("#mapG").css("display","none");
+	}
+
+</script>
+<div id="selection">
+	<div>
+		<form>
+			<p>
+			<!-- Boutons -->
+				<input type="button" id="temp-send" onclick="tempEnvoyer()" value="Ajouter" style="float: left;" /> 
+				
+				<input type="button" id="temp-clear" onclick="clearMap()" value="Retirer tout" style="float: right" />
+				<input type="button" onclick="closeMap()" value = "Fermer la carte" style="float: right"/>
+			</p>
+		</form>
+	</div>
+</div>
+<div id="map">
+	<div>
+		<div id="map_canvas" style="width: 100%; height: 500px"></div>
+		<script>initialize();</script>
+	</div>
+</div>
+<div id="temp-scripting"></div>

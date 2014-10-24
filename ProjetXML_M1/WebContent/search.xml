@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<entries xmlns="http://ref.otcnice.com/webservice/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:SchemaLocation="http://ref.otcnice.com/webservice/entries.xsd">
+
+<location xmlns="http://ref.otcnice.com/webservice/">Aéroport</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Magnan</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Nice Ouest</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Gambetta</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Centre Ville</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Masséna</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Vieux Nice</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Zone piétonne</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Jean Médecin</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Fabron</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Gare SNCF</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Acropolis</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Cimiez</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Port</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Nice Est</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Musiciens</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Bord de mer</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Libération</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Collines niçoises</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Nice Nord</location>
+<location xmlns="http://ref.otcnice.com/webservice/">Nice Plaine du Var Est</location>
+ </entries>

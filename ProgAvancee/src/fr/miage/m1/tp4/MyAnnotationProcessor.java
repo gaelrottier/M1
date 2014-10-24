@@ -59,7 +59,7 @@ public class MyAnnotationProcessor extends AbstractProcessor {
 
                     PrintWriter p = new PrintWriter(jfo.openWriter());
                     
-                    p.write();
+                    p.write("");
                     
                     
                 } catch (IOException ex) {

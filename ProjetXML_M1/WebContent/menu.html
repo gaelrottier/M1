@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<div id="recherche" xmlns:xsi="http://ref.otcnice.com/webservice/">
+<form action="DataServlet" method="POST">
+				Quartier h&ocirc;tel
+				<select name="qHotel" id="qHotel"><option>A&eacute;roport</option><option>Magnan</option><option>Nice Ouest</option><option>Gambetta</option><option>Centre Ville</option><option>Mass&eacute;na</option><option>Vieux Nice</option><option>Zone pi&eacute;tonne</option><option>Jean M&eacute;decin</option><option>Fabron</option><option>Gare SNCF</option><option>Acropolis</option><option>Cimiez</option><option>Port</option><option>Nice Est</option><option>Musiciens</option><option>Bord de mer</option><option>Lib&eacute;ration</option><option>Collines ni&ccedil;oises</option><option>Nice Nord</option><option>Nice Plaine du Var Est</option></select>
+<br>Minimum <select name="sLevel" id="sLevel"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select> &eacute;toiles
+				<input type="hidden" name="hotel" value="search">
+<br>
+<input type="submit" value="rechercher">
+</form>
+<form method="POST" action="DataServlet">
+<input type="hidden" name="hotel" value="all"><input type="submit" value="Tous les h&ocirc;tels">
+</form>
+<input type="button" value="Afficher les h&ocirc;tels sur la carte" onclick="showMap()"/>
+</div>

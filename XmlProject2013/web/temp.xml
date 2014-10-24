@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<entries xmlns="http://ref.otcnice.com/webservice/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:SchemaLocation="http://ref.otcnice.com/webservice/entries.xsd">
+
+<entry xmlns="http://ref.otcnice.com/webservice/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ID>1021</ID>
+  <name_fr>AC BY MARRIOTT NICE</name_fr>
+  <name_fr_short>AC BY MARRIOTT NICE</name_fr_short>
+  <address>
+    <address_line1>59 Promenade des Anglais</address_line1>
+    <address_line2/>
+    <address_line3/>
+    <zip>06000</zip>
+    <city>NICE</city>
+  </address>
+  <phone>+33 (0)4 93 97 90 90</phone>
+  <fax>+33 (0)4 93 44 06 55</fax>
+  <email>ac.nceac.exec.sec@marriott.com</email>
+  <website>http://www.achotelnice.com</website>
+  <contacts/>
+  <payments>
+    <payment>Visa</payment>
+    <payment>Master Card</payment>
+    <payment>American express</payment>
+    <payment>Diner's club</payment>
+    <payment>Chèques</payment>
+    <payment>Chèques Vacances</payment>
+    <payment>Espèces</payment>
+    <payment>Virements</payment>
+    <payment>Chèques de voyage</payment>
+    <payment>Carte de crédit</payment>
+  </payments>
+  <languages>
+    <language>Anglais</language>
+    <language>Allemand</language>
+    <language>Espagnol</language>
+    <language>Italien</language>
+    <language>Russe</language>
+    <language>Français</language>
+    <language>Néerlandais</language>
+    <language>Arabe</language>
+    <language>Finois</language>
+    <language>Portugais</language>
+  </languages>
+  <labels>
+    <label>Nice Irisée Naturellement</label>
+  </labels>
+  <amenities>
+    <amenity>Accès Internet</amenity>
+    <amenity>Ascenseur</amenity>
+    <amenity>Bar</amenity>
+    <amenity>Bibliothèque</amenity>
+    <amenity>Boutique</amenity>
+    <amenity>Garage privé</amenity>
+    <amenity>Jardin</amenity>
+    <amenity>Equipements pour enfants</amenity>
+    <amenity>Local matériel fermé</amenity>
+    <amenity>Parking privé</amenity>
+    <amenity>Parking public à proximité</amenity>
+    <amenity>Piscine</amenity>
+    <amenity>Restaurant</amenity>
+    <amenity>Salle de sport</amenity>
+    <amenity>Salon</amenity>
+    <amenity>Salon de télévision</amenity>
+    <amenity>Terrasse</amenity>
+    <amenity>Wifi</amenity>
+    <amenity>Accès Internet dans les chambres</amenity>
+    <amenity>Animaux acceptés</amenity>
+    <amenity>Blanchisserie</amenity>
+    <amenity>Bureau de change</amenity>
+    <amenity>Câble, satellite</amenity>
+    <amenity>Climatisation</amenity>
+    <amenity>Coffres clients</amenity>
+    <amenity>Double vitrage</amenity>
+    <amenity>Réservation de prestations</amenity>
+    <amenity>Service en chambre</amenity>
+    <amenity>Téléphone</amenity>
+    <amenity>Télévision</amenity>
+    <amenity>Veilleur de nuit</amenity>
+    <amenity>Voiturier</amenity>
+    <amenity>Accueil enfants</amenity>
+    <amenity>Menu Enfants</amenity>
+    <amenity>Salle de réunion</amenity>
+    <amenity>Chambres vue mer</amenity>
+    <amenity>Chambres communicantes / familiales</amenity>
+    <amenity>Piscine réservée à la clientèle</amenity>
+    <amenity>Equip. personnes handicapées</amenity>
+    <amenity>Toit-terrasse</amenity>
+  </amenities>
+  <profiles>
+    <profile>Handicapé</profile>
+    <profile>Couples</profile>
+  </profiles>
+  <locations>
+    <location>Aéroport</location>
+    <location>Magnan</location>
+    <location>Nice Ouest</location>
+    <location>Gambetta</location>
+    <location>Centre Ville</location>
+  </locations>
+  <categories>
+    <category>Hôtels de tourisme</category>
+    <category>Hôtels pour conférence</category>
+    <category>NN</category>
+  </categories>
+  <stations>
+    <station>Grosso CUM - Promenade</station>
+    <station>Grosso CUM</station>
+    <station>Grosso CUM</station>
+  </stations>
+  <standings_levels>
+    <standings_level>4 étoiles</standings_level>
+  </standings_levels>
+  <options>
+    <option>Accès handicapés</option>
+  </options>
+  <publications>
+    <publication>Meeting guide</publication>
+    <publication>Hébergement</publication>
+    <publication>Nice irisée naturellement</publication>
+  </publications>
+  <common_tags>
+    <common_tag>Rencontres professionnelles</common_tag>
+  </common_tags>
+  <descriptions/>
+  <images>
+    <image>http://www.nicetourisme.com/public/resources/directory/entries/photos/ref/191809.jpg</image>
+    <image>http://www.nicetourisme.com/public/resources/directory/entries/photos/ref/191814.jpg</image>
+    <image>http://www.nicetourisme.com/public/resources/directory/entries/photos/ref/191813.jpg</image>
+    <image>http://www.nicetourisme.com/public/resources/directory/entries/photos/ref/191810.jpg</image>
+    <image>http://www.nicetourisme.com/public/resources/directory/entries/photos/ref/191811.jpg</image>
+    <image>http://www.nicetourisme.com/public/resources/directory/entries/photos/ref/191812.jpg</image>
+    <image>http://www.nicetourisme.com/public/resources/directory/entries/photos/ref/191815.jpg</image>
+  </images>
+  <living>
+    <room_count>143</room_count>
+    <room_bath_count>0</room_bath_count>
+    <room_shower_count>143</room_shower_count>
+    <suite_count>22</suite_count>
+    <studio_count>0</studio_count>
+    <apartment_count>0</apartment_count>
+    <room_accessible_count>7</room_accessible_count>
+    <single_count>0</single_count>
+    <double_count>0</double_count>
+    <triple_count>0</triple_count>
+    <twins_count>0</twins_count>
+    <family_count>0</family_count>
+    <area>0</area>
+    <type>94 singles = doubles - 49 twins - 22 triples - 61 vue mer</type>
+    <floor>0</floor>
+    <bedroom_count>0</bedroom_count>
+    <sleeps_count>0</sleeps_count>
+    <furnished_room_count>0</furnished_room_count>
+  </living>
+  <tariffs>
+    <tariff>
+      <name>Chambre simple</name>
+      <unique>0</unique>
+      <min>120</min>
+      <max>500</max>
+      <average>0</average>
+      <fixed>0</fixed>
+    </tariff>
+    <tariff>
+      <name>Chambre double</name>
+      <unique>0</unique>
+      <min>120</min>
+      <max>500</max>
+      <average>0</average>
+      <fixed>0</fixed>
+    </tariff>
+    <tariff>
+      <name>Petit déjeuner</name>
+      <unique>0</unique>
+      <min>0</min>
+      <max>21</max>
+      <average>0</average>
+      <fixed>0</fixed>
+    </tariff>
+  </tariffs>
+  <capacity>
+    <total>0</total>
+    <indoor>0</indoor>
+    <outdoor>0</outdoor>
+    <group>120</group>
+    <room_count>3</room_count>
+    <disabled_count>0</disabled_count>
+  </capacity>
+  <closures/>
+  <spaces/>
+  <opening/>
+  <closing/>
+  <latitude>43.6931</latitude>
+  <longitude>7.25298</longitude>
+  <location_map>G5</location_map>
+  <note>4</note>
+  <niceres_availability>true</niceres_availability>
+  <niceres_id>911</niceres_id>
+  <created>2012-05-03 11:28:24</created>
+  <updated>2013-09-13 15:49:00</updated>
+</entry>
+ </entries>

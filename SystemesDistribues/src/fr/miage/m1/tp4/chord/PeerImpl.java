@@ -19,8 +19,8 @@ public class PeerImpl implements Peer {
     public PeerImpl(Identifier id) {
         this.id = id;
         entries = new ConcurrentHashMap<>();
-        this.successor = null;
-        this.predecessor = null;
+        successor = this;
+        predecessor = this;
 
         ScheduledExecutorService ses = Executors.newScheduledThreadPool(1);
         Runnable run = new Runnable() {
@@ -48,7 +48,7 @@ public class PeerImpl implements Peer {
 
     @Override
     public synchronized Peer findSuccessor(Identifier id) throws RemoteException {
-        if (this == successor) {
+        if (this.id.equals(successor.getId())) {
             return this;
         }
         if (id.isBetweenOpenClosed(this.id, successor.getId())) {
