@@ -1,5 +1,6 @@
 package fr.miage.m1.tp4;
 
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Set;
@@ -54,15 +55,64 @@ public class MyAnnotationProcessor extends AbstractProcessor {
 
             if (isStatic && ispublic && hasNoParameters) {
                 try {
+                    int ke = 0;
+
+                    switch (menu.shortcut()) {
+                        case "A":
+                            ke = KeyEvent.VK_A;
+                            break;
+                        case "Q":
+                            ke = KeyEvent.VK_Q;
+                            break;
+                        case "Z":
+                            ke = KeyEvent.VK_Z;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    String[] packages = elem.getEnclosingElement().toString().split("\\.");
+                    String className = packages[elem.getEnclosingElement().toString().split("\\.").length - 1];
+
                     Filer f = processingEnv.getFiler();
-                    JavaFileObject jfo = f.createClassFile(elem.getEnclosingElement().toString());
+                    JavaFileObject jfo = f.createClassFile(elem.getEnclosingElement().toString().substring(0, elem.getEnclosingElement().toString().length() - (className.length() + 1)) + ".AbstractAction" + className);
+//                    JavaFileObject jfo = f.createSourceFile(elem.getEnclosingElement().toString());
 
                     PrintWriter p = new PrintWriter(jfo.openWriter());
-                    
-                    p.write("");
-                    
-                    
-                } catch (IOException ex) {
+
+                    p.write("package " + elem.getEnclosingElement().toString().substring(0, elem.getEnclosingElement().toString().length() - (className.length() + 1)) + ";\n"
+                            + "\n"
+                            + "import java.awt.event.ActionEvent;\n"
+                            + "import java.awt.event.InputEvent;\n"
+                            + "import javax.swing.AbstractAction;\n"
+                            + "import javax.swing.Icon;\n"
+                            + "import javax.swing.KeyStroke;\n"
+                            + "import javax.swing.Action;\n"
+                            + "\n"
+                            + "public class AbstractAction" + className + " extends AbstractAction {\n"
+                            + "\n"
+                            + "    public AbstractAction" + className + "() {\n"
+                            + "        super(\"" + menu.name() + "\", new ImageIcon(\"" + menu.icon() + "\"));\n"
+                            + "    }\n"
+                            + "\n"
+                            + "    @Override\n"
+                            + "    public void actionPerformed(ActionEvent e) {\n"
+                            + "        new " + elem.getEnclosingElement().toString() + "()." + elem.toString() + ";\n"
+                            + "    }\n"
+                            + "\n"
+                            + "    public Object getValue(String arg0) {\n"
+                            + "        if (arg0.equals(Action.ACCELERATOR_KEY)) // cannot be changed later (use putValue when possible - not anonymous)\n"
+                            + "        {\n"
+                            + "            return KeyStroke.getKeyStroke(" + ke + ", InputEvent.CTRL_DOWN_MASK);\n"
+                            + "        }\n"
+                            + "        return super.getValue(arg0);\n"
+                            + "    }\n"
+                            + "}\n"
+                            + "");
+                    p.flush();
+                    p.close();
+
+                } catch (IOException | SecurityException ex) {
                     Logger.getLogger(MyAnnotationProcessor.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } else {

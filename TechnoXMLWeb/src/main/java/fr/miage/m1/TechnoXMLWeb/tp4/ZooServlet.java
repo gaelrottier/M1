@@ -1,19 +1,16 @@
 package fr.miage.m1.TechnoXMLWeb.tp4;
 
+import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.xml.transform.TransformerException;
 
+@Path("/zoo")
 public class ZooServlet extends HttpServlet {
 
-    public final static String /**
-             * The path to the stylesheet.
-             */
-            XSLT_PATH = "WEB-INF/zoo.xsl",
-            /**
-             * The path to the XML doc.
-             */
-            XML_PATH = "zoo.xml";
-
+    @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
     }
@@ -21,16 +18,22 @@ public class ZooServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         ServletContext webApp = this.getServletContext();
         try {
-        } catch (Exception ex) {
+            ProcessXSLT.process(webApp);
+            response.sendRedirect(webApp.getRealPath("/" + "res.html"));
+        } catch (TransformerException ex) {
+            throw new ServletException(ex);
+        } catch (IOException ex) {
             throw new ServletException(ex);
         }
     }
 
+    @GET
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, java.io.IOException {
         processRequest(request, response);
     }
 
+    @GET
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, java.io.IOException {
         processRequest(request, response);

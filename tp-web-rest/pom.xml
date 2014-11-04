@@ -39,6 +39,8 @@
                 <artifactId>maven-jetty-plugin</artifactId>
                 <version>6.1.26</version>
                 <configuration>
+                    <scanIntervalSeconds>2</scanIntervalSeconds>
+                    <contextPath>/</contextPath>
                     <!-- target/tp-web-rest -->
                     <webAppSourceDirectory>${project.build.directory}/${project.build.finalName}</webAppSourceDirectory>
                 </configuration>

@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
     xmlns:zoo="urn:unice:minfo-2004"
     xmlns:doc="http://www.unice.fr/minfo/2004"
-    xmlns:date="*** Processing dates ***"
+    xmlns:date="dates"
     exclude-result-prefixes="zoo doc date">
 
     <xsl:import href="dates.xsl"/>
