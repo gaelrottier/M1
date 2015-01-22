@@ -1,0 +1,52 @@
+#-*- coding : utf-8 *-*
+'''
+File : TP1_0.py
+Creer un signal numérique et l'afficher
+On utilise ici le B,A,BA de Python
+    => Donc ça doit être compris !!!
+'''
+import math
+import matplotlib.pyplot as plt
+import numpy as np
+
+class Signal:
+
+    def __init__(self, a=1.0, ph=0, f=440.0, fe=8000.0, nT=1):
+        self.a = a
+        self.ph = ph
+        self.f = f
+        self.fe = fe
+        self.nT = nT
+        
+    def make_sin(self):
+        """
+        Create a synthetic 'sine wave'
+        First version : use classic Python lists
+        """
+        omega = 2*math.pi*f
+        N = int(fe/f)
+        te = 1.0/fe
+        sig_t = []
+        sig_s = []
+        for i in range(N*nT):
+            t=te*i
+            sig_t.append(t)
+            sig_s.append(a*math.sin((omega*t)+ph))
+            
+        return sig_t, sig_s
+    
+    def plot(self, inx, iny, leg, format='-bo'):
+        plt.plot(inx, iny, format)
+        plt.xlabel('time (s)')
+        plt.ylabel('voltage (V)')
+        plt.title(leg)
+        #plt.xlim([-1.2, 1.2])
+        plt.grid(True)
+    
+if __name__ == '__main__':
+    signal = Signal()
+    
+    x,y = signal.make_sin(2, f=50.0, fe=1000.0, nT=2)
+    signal.plot(x, y, "Une sinusoïde...")
+    
+    plt.show()

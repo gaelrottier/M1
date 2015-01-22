@@ -1,0 +1,105 @@
+#-*- coding:ISO-8859-1 -*-
+import math
+import matplotlib.pyplot as plt
+import numpy as np
+
+class Signal:
+
+    # a = amplitude
+    # f = frquence
+    # fe = frequence d'echantillonage
+    # nT = Nombre de periodes
+    # N = Nombre de points
+    # ph = phase a l'origine
+    def __init__(self, a, f, fe, nT, ph):
+        self.a = a
+        self.f = f
+        self.fe = fe
+        self.nT = nT
+        self.ph = ph
+        self.omega = 2 * math.pi * self.f
+        self.N = int(self.fe / self.f)
+        self.te = 1.0 / self.fe
+        self.T = 1 / self.f
+        self.name = ""
+        self.sig_t = []
+        self.sig_s = []
+    
+    # Initialisation de la courbe
+    def calculate_wave (self):
+        
+        for i in range(self.N*self.nT):
+            t = self.te*i
+            self.sig_t.append(t)
+            self.sig_s.append(self.get_sig(t))
+      
+    # Dessine la courbe
+    def plot(self, format='-bo'):
+        self.calculate_wave()
+        plt.plot(self.sig_t, self.sig_s, format)
+        plt.xlabel('time (s)')
+        plt.ylabel('voltage (V)')
+        plt.title("Un signal "+ self.name)
+        plt.grid(True)         
+        plt.show() 
+        
+#Dessine un signal en carre      
+class Carre(Signal):
+    
+    def __init__(self, a, f, fe, nT, ph):
+        Signal.__init__(self, a, f, fe, nT, ph)
+        self.name = "carre"
+    
+    def get_sig(self,t):
+        x = self.a * math.sin((self.omega * t) + self.ph)
+        
+        if (x > 0) :
+            return self.a * 1
+        elif (x == 0) :
+            return 0
+        else :
+            return -1 * self.a
+
+#Dessine un signal en triangle
+class Triangle(Signal):
+    
+    def __init__(self, a, f, fe, nT, ph):
+        Signal.__init__(self, a, f, fe, nT, ph)
+        self.name = "en triangle"
+    
+    def get_sig(self,t):
+        return self.a * (4 * (math.fabs((t / self.T) - math.floor((t / self.T) + 0.5))) - 1.0)
+    
+#Dessine un signal en dent de scie
+class DentScie(Signal):
+    
+    def __init__(self, a, f, fe, nT, ph):
+        Signal.__init__(self, a, f, fe, nT, ph)
+        self.name = "en dent de scie"
+    
+    def get_sig(self,t):
+        return 2 * self.a * ((t / self.T) - (math.floor(t / self.T)) - (1. / 2.))
+
+#Dessine un signal sinusoidal
+class Sinusoide(Signal):
+    
+    def __init__(self, a, f, fe, nT, ph):
+        Signal.__init__(self, a, f, fe, nT, ph)
+        self.name = "sinusoidal"
+    
+    def get_sig(self,t):
+        return self.a * math.sin((self.omega * t) + self.ph)
+
+if __name__ == '__main__':
+    #Sinusoide
+    sin = Sinusoide(2,50,1000,2, 0 )
+    sin.plot()
+    #Dent de scie
+    scie = DentScie(2,f=50.0, fe=1000.0, nT=2, ph=0 )
+    scie.plot('-ro')
+    #Triangle
+    tri = Triangle(a=3, ph=-math.pi/2, f=50.0, fe=1000.0, nT=2)
+    tri.plot()
+    #Carre
+    carre = Carre(a=3, ph=-math.pi/2, f=50.0, fe=1000.0, nT=3)
+    carre.plot()

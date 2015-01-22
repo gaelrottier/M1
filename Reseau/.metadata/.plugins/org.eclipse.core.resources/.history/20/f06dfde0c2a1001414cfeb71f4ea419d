@@ -1,0 +1,13 @@
+#-*- coding : utf-8 *-*
+'''
+File : TP1_0.py
+Creer un signal numérique et l'afficher
+On utilise ici le B,A,BA de Python
+    => Donc ça doit être compris !!!
+'''
+import math
+import matplotlib.pyplot as plt
+import numpy as np
+
+def make_sin(a=1.0, ph=0, f=440.0, fe=8000.0, nT=1):
+    

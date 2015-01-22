@@ -57,7 +57,7 @@ public class Client {
 
         Registry r = LocateRegistry.getRegistry(10099);
         Directory d = (Directory) r.lookup("server");
-
+        
         for (int i = 0; i < 10000; i++) {
             final int y = i;
             execute.execute(new Runnable() {
