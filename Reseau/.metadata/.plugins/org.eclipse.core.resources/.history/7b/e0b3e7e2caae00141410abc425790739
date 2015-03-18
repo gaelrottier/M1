@@ -1,0 +1,71 @@
+import wave
+import math
+import Signaux.tp1_0.Signal as Signal
+
+class Son(object):
+    def __init__ (self, a, f):
+        print("Création d'un fichier audio au format WAV (PCM 8 bits stereo 44100 Hz)")
+        #Amplitude
+        self.a = a
+        #Frequence
+        self.f = f
+        self.duree = float(input('Durée (en secondes) ? '))
+        #Nombre de canaux
+        self.nbCanal = 2
+        #Taille d'un echantillon
+        self.nbOctet = 1
+        #Tableaux de stockage des valeurs
+        self.valsG = []
+        self.valsD = []
+        #Nombre de valeurs calculees, sert pour l'ecriture dans le fichier
+        self.nbVals = 0
+       
+    def write_as_wav(self, nom):
+        #Instanciation de l'objet son
+        fson = wave.open(nom, 'w')
+        
+        fson.setparams(self.parametres)
+        
+        print('Génération d\'un son sinusoïdal sur chaque canal...')
+        for i in range(0, self.nbVals):
+            fson.writeframes(self.valsG[i] + self.valsD[i])
+        
+        fson.close()
+        print("Fichier généré !")
+        
+    def make(self, fe, nT):
+        #Frequence d'echantillonnage
+        self.fe = fe
+        #Nombre de periodes
+        self.nT = nT
+        #Nombre d'echantillons
+        nbEchantillon = int(self.duree * fe)
+        print("Nombre d'échantillons : %s" % nbEchantillon)
+        self.parametres = (self.nbCanal, self.nbOctet, fe, nbEchantillon, 'NONE', 'not compressed')
+        
+        #Pour chaque fréquence choisie
+        for freq in self.f:
+                
+            #Calcul des donnees
+            for i in range(0, int(nbEchantillon - nbEchantillon * 0.1)): #10% du nombre d'échantillons est enlevé afin de pouvoir jouer les croches de Funky Town
+                self.nbVals += 1 
+                #canal gauche
+                #127.5 + 0.5 pour arrondir a l'entier le plus proche
+                self.valsG.append(wave.struct.pack('B', int(128.0 + self.calc(i, freq))))
+                #canal droit
+                self.valsD.append(wave.struct.pack('B', int(128.0 + self.calc(i, freq))))
+    
+class Sinusoide(Son, Signal):
+    def calc(self, i, freq):
+        #i = echantillon courant
+        return self.a * math.sin(2.0 * math.pi * freq * i / self.fe)
+    
+if __name__ == '__main__':
+    niv = 0.8
+    #Fréquences exploitées pour le son
+#     freq = [264, 297, 330, 352, 396, 440, 495, 528]
+    #C'est la musique de Funky Town !!
+    freq = [528, 528, 466, 528, 0, 396, 0, 396, 528, 698.5, 660, 528]
+    s = Sinusoide(127.5 * niv, freq)
+    s.make(44100.0, 1000)
+    s.write_as_wav("sinusoide.wav")
